@@ -1,3 +1,4 @@
+import "./style.css";
 
 const initLoad = () => {
     //var cont = document.getElementById("content"); // returns as null - fix
