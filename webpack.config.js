@@ -10,7 +10,7 @@ module.exports = {
   },
   devtool: "inline-source-map",
   plugins: [new HtmlWebpackPlugin({
-    template: './src/template.html',
+    template: './src/index.html',
   })],
   module: {
     rules: [
