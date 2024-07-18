@@ -1,20 +1,38 @@
 // Imports
-import {initLoad} from "./loadPage";
+import {initLoad, menuPrev} from "./loadPage";
+import { menuHead } from "./menu";
 
 // vars 
-//const mainCont = document.getElementById("content"); // returns null
 const mainCont = document.querySelector("#content");
 
-// Test
-var mainPg = initLoad(mainCont);
-mainCont.appendChild(mainPg);
+// Default
+mainCont.appendChild(initLoad());
+mainCont.appendChild(menuPrev());
 
-const element = document.createElement('div');
 
-  
-  element.classList.add('hello');
+const navButtons = document.querySelectorAll("nav button");
 
-navButtons = document.querySelectorAll("nav button");
-navButtons.addEventListener("click", () => {
-
+navButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        var pageAction = button.getAttribute("data-page-type");
+        switch(pageAction) {
+            case "home":
+                // init load and menupreview
+                break;
+            case "menu":
+                clearContent(mainCont);
+                mainCont.appendChild(menuHead());
+                break
+            case "about":
+                //
+                break;
+            case "contact":
+                //
+                break;
+        }
+    });
 });
+
+function clearContent(maintCont) {
+    maintCont.replaceChildren();
+}
