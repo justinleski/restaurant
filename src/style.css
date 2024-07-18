@@ -1,8 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Poiret+One&family=Ruda:wght@400..900&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
+
+@font-face {
+    font-family: "Melodrama";
+    src: url("../styles/fonts/Melodrama-Variable.ttf");
+}
 :root {
+    --off-white: #fafaef;
     --accent-primary: #4A9DAB;
     --accent-secondary: #89D69A;
     --accent-tertiary: #E1E17E;
-    --main-font-fam: Arial, Helvetica, sans-serif;
+    --main-font-fam: "Melodrama", Arial, Helvetica, sans-serif;
+    --secondary-font-fam: "Wix Madefor Text", Arial, Helvetica, sans-serif;
+
+    --size-1: 11.391rem;
+    --size-2: 7.594rem;
+    --size-3: 5.063rem;
+    --size-4: 3.375rem;
+    --size-5: 2.25rem;
+    --size-p: 1rem;
+    --size-s: 0.667rem;
+
 }
 *, *::before, *::after {
     box-sizing: border-box;
@@ -10,9 +28,12 @@
 * {
     margin: 0;
 }
+
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    min-width: 100%;
+    
 }
 img, picture, video, canvas, svg {
     display: block;
@@ -24,7 +45,9 @@ input, button, textarea, select {
 p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
     font-family: var(--main-font-fam);
+    font-weight: 400;
 }
+
 #root, #__next {
     isolation: isolate;
 }
@@ -35,6 +58,87 @@ button {
     background-color: var(--accent-primary);
 }
 
-.hello {
-    color: red;
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--accent-primary);
+    padding-left: 32px;
+    padding-right: 32px;
+    font-family: var(--main-font-fam);
+}
+
+.branding, nav {
+    font-family: inherit;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--off-white);
+}
+
+.branding {
+    font-size: var(--size-5);
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+nav button {
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-size: var(--size-5);
+    height: 100%;
+    color: inherit;
+}
+
+nav button .active {
+    background-color: var(--accent-secondary);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1280px;
+    width: 100%;
+}
+
+.tagline {
+    font-size: var(--size-2);
+}
+
+.section {
+    padding-top: 64px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    white-space: pre; /*Forces line break from .textContent*/
+    gap: 100px
+}
+
+.section p {
+    text-wrap: wrap;
+    font-size: var(--size-5);
+    font-weight: 200;
+    font-family: var(--secondary-font-fam);
+    color: rgb(130, 130, 130);
+}
+
+.section h2 {
+    font-size: var(--size-3);
+    font-weight: 700;
+}
+
+.actionBtn {
+    background-color: var(--accent-tertiary);
+    padding: 12px;
+    margin-top: 8px;
+    font-family: var(--secondary-font-fam);
 }
