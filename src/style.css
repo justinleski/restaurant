@@ -108,6 +108,9 @@ nav button {
     font-size: var(--size-5);
     height: 100%;
     color: inherit;
+    border-radius: 0;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 nav button .active {
