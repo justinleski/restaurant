@@ -1,8 +1,9 @@
 import "./style.css";
+import Menu from "../misc/restaurant-menu.csv";
 
 const menuHead = () => {
     const card = document.createElement("div");
-    card.classList.add("columm");
+    card.classList.add("section");
     //
     const header = document.createElement("h2");
     header.textContent = "Our Menu";
@@ -17,4 +18,48 @@ const menuHead = () => {
     return card;
 }
 
-export {menuHead};
+const menuGrid = () => {
+    var grid = document.createElement("div");
+    grid.classList.add("menu");
+
+    console.log(Menu);
+    populateGrid(grid);
+
+    return grid;
+}
+
+const populateGrid = (grid) => {
+    Menu.forEach(row => {
+        console.log(row.name); // shows as undefined
+        var tempCard = createItem(row[0], row[1], row[2], row[3], row[4]);
+        grid.appendChild(tempCard);
+    });
+}
+
+const createItem = (itemSrc, itemAlt, itemDesc, itemPrice, itemName) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const img = document.createElement("img");
+    img.src = itemSrc;
+    img.alt = itemAlt;
+
+    const name = document.createElement("h4");
+    name.textContent = itemName;
+
+    const desc = document.createElement("p");
+    desc.textContent = itemDesc;
+
+    const price = document.createElement("h6");
+    price.textContent = "$ "+itemPrice;
+
+    // Append to the card all items
+    card.appendChild(img);
+    card.appendChild(name);
+    card.appendChild(desc);
+    card.appendChild(price);
+
+    return card;
+}
+
+export {menuHead, menuGrid};

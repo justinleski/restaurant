@@ -189,7 +189,39 @@ nav button .active {
     clip-path: inset(0 -100vmax);
 }
 
-.column {
+.menu {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+    padding-bottom: 32px;
+}
+
+.card {
     display: flex;
     flex-direction: column;
+    padding: 4px;
+    border-radius: 1rem;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card h4 {
+    font-weight: 700;
+    line-height: 2;
+    color: inherit;
+    font-size: var(--size-5);
+}
+
+.card p, .card h6 {
+    font-family: var(--secondary-font-fam);
+    color: inherit;
+}
+
+.card h6 {
+    font-weight: 800;
+    font-size: var(--size-6);
 }

@@ -1,6 +1,6 @@
 // Imports
 import {initLoad, menuPrev} from "./loadPage";
-import { menuHead } from "./menu";
+import { menuHead, menuGrid } from "./menu";
 
 // vars 
 const mainCont = document.querySelector("#content");
@@ -13,14 +13,9 @@ mainCont.appendChild(menuPrev());
 const navButtons = document.querySelectorAll("nav button");
 
 navButtons.forEach(button => {
-
-
-
     button.addEventListener("click", () => {
         
         var pageAction = button.getAttribute("data-page-type");
-
-        // 
         clearContent(mainCont); // Clears page of current content
 
         // Displays current selected tab
@@ -31,7 +26,7 @@ navButtons.forEach(button => {
             else {
                 btn.style.background = "transparent";
             }
-        })
+        });
         
         switch(pageAction) {
             case "home":
@@ -41,6 +36,7 @@ navButtons.forEach(button => {
                 break;
             case "menu":
                 mainCont.appendChild(menuHead());
+                mainCont.appendChild(menuGrid());
                 break;
             case "about":
                 //
