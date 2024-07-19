@@ -31,7 +31,7 @@ const menuGrid = () => {
 const populateGrid = (grid) => {
     Menu.forEach(row => {
         console.log(row.name); // shows as undefined
-        var tempCard = createItem(row[0], row[1], row[2], row[3], row[4]);
+        var tempCard = createItem(row.src, row.alt, row.desc, row.price, row.name);
         grid.appendChild(tempCard);
     });
 }

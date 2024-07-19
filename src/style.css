@@ -225,3 +225,19 @@ nav button .active {
     font-weight: 800;
     font-size: var(--size-6);
 }
+
+.aboutUsDesc {
+    background-color: var(--accent-secondary);
+    font-family: var(--secondary-font-fam);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    margin-top: 64px;
+}
+
+.aboutUsDesc p {
+    font: inherit;
+    font-size: var(--size-5);
+}

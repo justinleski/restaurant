@@ -1,6 +1,8 @@
 // Imports
 import {initLoad, menuPrev} from "./loadPage";
 import { menuHead, menuGrid } from "./menu";
+import { aboutUs } from "./about";
+import { contactUs } from "./contact";
 
 // vars 
 const mainCont = document.querySelector("#content");
@@ -8,7 +10,6 @@ const mainCont = document.querySelector("#content");
 // Default
 mainCont.appendChild(initLoad());
 mainCont.appendChild(menuPrev());
-
 
 const navButtons = document.querySelectorAll("nav button");
 
@@ -39,9 +40,10 @@ navButtons.forEach(button => {
                 mainCont.appendChild(menuGrid());
                 break;
             case "about":
-                //
+                mainCont.appendChild(aboutUs());
                 break;
             case "contact":
+                mainCont.appendChild(contactUs());
                 //
                 break;
         }
