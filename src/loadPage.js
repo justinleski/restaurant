@@ -1,4 +1,5 @@
 import "./style.css";
+import Crepe from "../styles/imgs/crepes.jpg";
 
 const initLoad = () => {
     //var cont = document.getElementById("content"); // returns as null - fix
@@ -46,12 +47,12 @@ const menuPrev = () => {
     card.appendChild(callToAct);
 
     // Make image
-    const img = document.createElement("img");
-    img.src = "../styles/imgs/crepes.jpg";
+    const myCrepe = new Image();
+    myCrepe.src = Crepe;
 
     // Export
     menuSect.appendChild(card);
-    menuSect.appendChild(img);
+    menuSect.appendChild(myCrepe);
 
     return menuSect;
 }
